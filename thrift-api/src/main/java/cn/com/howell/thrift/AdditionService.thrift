@@ -1,4 +1,6 @@
-typedef i32 int  //typedefs to get convenient names for your types  
+namespace java cn.com.howell.api
+
+typedef i32 int  //typedefs to get convenient names for your types
   
 service AdditionService {  // defines the service to add two numbers  
         int add(1:int n1, 2:int n2), //defines a method  
