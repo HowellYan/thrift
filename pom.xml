@@ -26,6 +26,7 @@
         <module>thrift-client</module>
         <module>thrift-server</module>
         <module>spring-boot-thrift</module>
+        <module>spring-boot-thrift-example</module>
     </modules>
 
     <parent>
