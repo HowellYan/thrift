@@ -7,6 +7,7 @@ import org.apache.thrift.protocol.TProtocol;
 import org.apache.thrift.transport.TSocket;
 import org.apache.thrift.transport.TTransport;
 import org.apache.thrift.transport.TTransportException;
+
 /**
  * Created by HowellYang on 12/7/17 AM11:11.
  * E-Mail:th15817161961@gmail.com

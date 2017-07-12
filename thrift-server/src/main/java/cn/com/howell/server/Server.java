@@ -2,7 +2,6 @@ package cn.com.howell.server;
 
 import cn.com.howell.api.AdditionService;
 import cn.com.howell.server.impl.AdditionServiceImpl;
-import org.apache.thrift.protocol.TBinaryProtocol;
 import org.apache.thrift.protocol.TBinaryProtocol.Factory;
 import org.apache.thrift.server.TServer;
 import org.apache.thrift.server.TThreadPoolServer;
@@ -22,7 +21,7 @@ public class Server {
 
             AdditionService.Processor process = new AdditionService.Processor(new AdditionServiceImpl());
 
-            Factory portFactory = new TBinaryProtocol.Factory(true, true);
+            Factory portFactory = new Factory(true, true);
 
             Args args = new Args(serverTransport);
             args.processor(process);
