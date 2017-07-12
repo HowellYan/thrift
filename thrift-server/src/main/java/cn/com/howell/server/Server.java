@@ -21,8 +21,8 @@ public class Server {
 
             AdditionService.Processor process = new AdditionService.Processor(new AdditionServiceImpl());
 
-            Factory portFactory = new Factory(true, true);
 
+            Factory portFactory = new Factory(true, true);
             Args args = new Args(serverTransport);
             args.processor(process);
             args.protocolFactory(portFactory);
