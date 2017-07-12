@@ -12,7 +12,7 @@ import java.lang.annotation.*;
 @Documented
 @Inherited
 @Component
-public @interface ThriftController {
+public @interface ThriftServer {
 
     String[] value() default {};
 }

@@ -4,7 +4,7 @@ import org.apache.thrift.TProcessor;
 import org.apache.thrift.protocol.TBinaryProtocol;
 import org.apache.thrift.protocol.TProtocolFactory;
 import org.apache.thrift.server.TServlet;
-import org.spring.boot.thrift.server.annotation.ThriftController;
+import org.spring.boot.thrift.server.annotation.ThriftServer;
 import org.spring.boot.thrift.server.interceptor.MetricsThriftMethodInterceptor;
 import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.aop.target.SingletonTargetSource;
@@ -32,7 +32,7 @@ import java.lang.reflect.Constructor;
  * Created by Howell on 16/1/11.
  */
 @Configuration
-@ConditionalOnClass(value = {ThriftController.class})
+@ConditionalOnClass(value = {ThriftServer.class})
 @ConditionalOnWebApplication
 public class ThriftServerAutoConfiguration {
 
@@ -76,14 +76,15 @@ public class ThriftServerAutoConfiguration {
 
         @Autowired
         private TProtocolFactory protocolFactory;
+
         @Autowired
         private ThriftConfigurer thriftConfigurer;
 
         @Override
         public void onStartup(ServletContext servletContext) throws ServletException {
-            String[] beans = applicationContext.getBeanNamesForAnnotation(ThriftController.class);
+            String[] beans = applicationContext.getBeanNamesForAnnotation(ThriftServer.class);
             for (String beanName : beans) {
-                ThriftController annotation = applicationContext.findAnnotationOnBean(beanName, ThriftController.class);
+                ThriftServer annotation = applicationContext.findAnnotationOnBean(beanName, ThriftServer.class);
                 try {
                     register(servletContext, annotation.value(), protocolFactory.getClass(), applicationContext.getBean(beanName));
                 } catch (ClassNotFoundException e) {
