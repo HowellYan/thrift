@@ -30,14 +30,19 @@ public class ThriftPoolAutoConfiguration {
 
     @Autowired
     private TProtocolFactory protocolFactory;
+
     @Autowired
     private LoadBalancerClient loadBalancerClient;
+
     @Autowired
     private PropertyResolver propertyResolver;
+
     @Value("${thrift.client.max.poolobject:10}")
     private int maxThreads;
+
     @Autowired
     private Tracer tracer;
+
     @Autowired
     private SpanInjector<TTransport> thriftTransportSpanInjector;
 

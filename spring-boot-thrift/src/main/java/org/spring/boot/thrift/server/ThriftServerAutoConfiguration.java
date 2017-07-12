@@ -1,11 +1,11 @@
 package org.spring.boot.thrift.server;
 
-import org.spring.boot.thrift.server.annotation.ThriftController;
-import org.spring.boot.thrift.server.interceptor.MetricsThriftMethodInterceptor;
 import org.apache.thrift.TProcessor;
 import org.apache.thrift.protocol.TBinaryProtocol;
 import org.apache.thrift.protocol.TProtocolFactory;
 import org.apache.thrift.server.TServlet;
+import org.spring.boot.thrift.server.annotation.ThriftController;
+import org.spring.boot.thrift.server.interceptor.MetricsThriftMethodInterceptor;
 import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.aop.target.SingletonTargetSource;
 import org.springframework.beans.BeanUtils;
@@ -16,7 +16,7 @@ import org.springframework.boot.actuate.metrics.GaugeService;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
-import org.springframework.boot.context.embedded.RegistrationBean;
+import org.springframework.boot.web.servlet.RegistrationBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;

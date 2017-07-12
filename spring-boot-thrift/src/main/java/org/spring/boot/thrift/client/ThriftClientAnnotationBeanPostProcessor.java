@@ -1,7 +1,5 @@
 package org.spring.boot.thrift.client;
 
-import org.spring.boot.thrift.client.annotation.ThriftClient;
-import org.spring.boot.thrift.client.pool.ThriftKey;
 import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
 import com.netflix.hystrix.HystrixCommandKey;
@@ -10,6 +8,8 @@ import org.apache.commons.pool2.KeyedObjectPool;
 import org.apache.thrift.TException;
 import org.apache.thrift.TServiceClient;
 import org.apache.thrift.protocol.TProtocol;
+import org.spring.boot.thrift.client.annotation.ThriftClient;
+import org.spring.boot.thrift.client.pool.ThriftKey;
 import org.springframework.aop.framework.Advised;
 import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.aop.support.AopUtils;
