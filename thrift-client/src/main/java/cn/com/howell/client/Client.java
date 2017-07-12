@@ -1,6 +1,7 @@
 package cn.com.howell.client;
 
 import cn.com.howell.api.AdditionService;
+import cn.com.howell.api.req.Addreq;
 import org.apache.thrift.TException;
 import org.apache.thrift.protocol.TBinaryProtocol;
 import org.apache.thrift.protocol.TProtocol;
@@ -23,6 +24,11 @@ public class Client {
 
             System.out.println(client.add(2012, 5100));
             System.out.println(client.getString("Howell"));
+
+            Addreq addreq = new Addreq();
+            addreq.setNum1(15);
+            addreq.setNum2(60);
+            System.out.println(client.tre(addreq));
 
             transport.close();
         } catch (TTransportException e) {
