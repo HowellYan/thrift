@@ -1,7 +1,10 @@
 package cn.com.howell.server;
 
 import cn.com.howell.api.AdditionService;
+import cn.com.howell.api.UserService;
 import cn.com.howell.server.impl.AdditionServiceImpl;
+import cn.com.howell.server.impl.UserServiceImpl;
+import org.apache.thrift.TMultiplexedProcessor;
 import org.apache.thrift.protocol.TBinaryProtocol.Factory;
 import org.apache.thrift.server.TServer;
 import org.apache.thrift.server.TThreadPoolServer;
@@ -19,12 +22,17 @@ public class Server {
 
             TServerSocket serverTransport = new TServerSocket(1234);
 
-            AdditionService.Processor process = new AdditionService.Processor(new AdditionServiceImpl());
+            TMultiplexedProcessor processor = new TMultiplexedProcessor();
 
+            AdditionService.Processor process = new AdditionService.Processor(new AdditionServiceImpl());
+            UserService.Processor userProcessor = new UserService.Processor(new UserServiceImpl());
+
+            processor.registerProcessor("AdditionService", process);
+            processor.registerProcessor("UserService", userProcessor);
 
             Factory portFactory = new Factory(true, true);
             Args args = new Args(serverTransport);
-            args.processor(process);
+            args.processor(processor);
             args.protocolFactory(portFactory);
 
             TServer server = new TThreadPoolServer(args);
