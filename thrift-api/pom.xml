@@ -11,5 +11,20 @@
 
     <artifactId>thrift-api</artifactId>
 
+    <build>
+        <plugins>
+            <!-- 要求开发环境需要thrift compiler 环境 -->
+            <plugin>
+                <groupId>org.apache.thrift</groupId>
+                <artifactId>thrift-maven-plugin</artifactId>
+                <version>0.10.0</version>
+                <configuration>
+                    <thriftExecutable>/usr/local/Cellar/thrift/0.10.0/bin/thrift</thriftExecutable>
+                    <thriftSourceRoot>${basedir}/src/main/java/cn/com/howell/thrift</thriftSourceRoot>
+                    <outputDirectory>${basedir}/src/main/java/cn/com/howell/api</outputDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

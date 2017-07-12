@@ -18,16 +18,7 @@
                     <target>1.6</target>
                 </configuration>
             </plugin>
-            <!-- 要求开发环境需要thrift compiler 环境 -->
-            <plugin>
-                <groupId>org.apache.thrift</groupId>
-                <artifactId>thrift-maven-plugin</artifactId>
-                <version>0.10.0</version>
-                <configuration>
-                    <thriftExecutable>/usr/local/bin/thrift</thriftExecutable>
-                    <thriftSourceRoot>${basedir}/src/main/my_custom_thrift_root</thriftSourceRoot>
-                </configuration>
-            </plugin>
+            
         </plugins>
     </build>
     <modules>
