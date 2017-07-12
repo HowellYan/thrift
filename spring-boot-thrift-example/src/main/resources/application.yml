@@ -22,7 +22,7 @@ spring:
     metrics:
       enabled: true
 
-bbthriftserver:
+thriftserver:
   connectTimeout: 3000
   readTimeout: 3000
   maxRetries: 1 # if call fail,it will try to recall times
