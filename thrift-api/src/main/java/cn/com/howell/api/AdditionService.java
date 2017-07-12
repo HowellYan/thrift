@@ -16,7 +16,7 @@ public class AdditionService {
 
     public java.lang.String getString(java.lang.String s1) throws org.apache.thrift.TException;
 
-    public double tre(cn.com.howell.api.req.Addreq s1) throws org.apache.thrift.TException;
+    public cn.com.howell.api.resp.Addresp tre(cn.com.howell.api.req.Addreq s1) throws org.apache.thrift.TException;
 
   }
 
@@ -26,7 +26,7 @@ public class AdditionService {
 
     public void getString(java.lang.String s1, org.apache.thrift.async.AsyncMethodCallback<java.lang.String> resultHandler) throws org.apache.thrift.TException;
 
-    public void tre(cn.com.howell.api.req.Addreq s1, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler) throws org.apache.thrift.TException;
+    public void tre(cn.com.howell.api.req.Addreq s1, org.apache.thrift.async.AsyncMethodCallback<cn.com.howell.api.resp.Addresp> resultHandler) throws org.apache.thrift.TException;
 
   }
 
@@ -97,7 +97,7 @@ public class AdditionService {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "getString failed: unknown result");
     }
 
-    public double tre(cn.com.howell.api.req.Addreq s1) throws org.apache.thrift.TException
+    public cn.com.howell.api.resp.Addresp tre(cn.com.howell.api.req.Addreq s1) throws org.apache.thrift.TException
     {
       send_tre(s1);
       return recv_tre();
@@ -110,7 +110,7 @@ public class AdditionService {
       sendBase("tre", args);
     }
 
-    public double recv_tre() throws org.apache.thrift.TException
+    public cn.com.howell.api.resp.Addresp recv_tre() throws org.apache.thrift.TException
     {
       tre_result result = new tre_result();
       receiveBase(result, "tre");
@@ -205,16 +205,16 @@ public class AdditionService {
       }
     }
 
-    public void tre(cn.com.howell.api.req.Addreq s1, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler) throws org.apache.thrift.TException {
+    public void tre(cn.com.howell.api.req.Addreq s1, org.apache.thrift.async.AsyncMethodCallback<cn.com.howell.api.resp.Addresp> resultHandler) throws org.apache.thrift.TException {
       checkReady();
       tre_call method_call = new tre_call(s1, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class tre_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Double> {
+    public static class tre_call extends org.apache.thrift.async.TAsyncMethodCall<cn.com.howell.api.resp.Addresp> {
       private cn.com.howell.api.req.Addreq s1;
-      public tre_call(cn.com.howell.api.req.Addreq s1, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public tre_call(cn.com.howell.api.req.Addreq s1, org.apache.thrift.async.AsyncMethodCallback<cn.com.howell.api.resp.Addresp> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.s1 = s1;
       }
@@ -227,7 +227,7 @@ public class AdditionService {
         prot.writeMessageEnd();
       }
 
-      public java.lang.Double getResult() throws org.apache.thrift.TException {
+      public cn.com.howell.api.resp.Addresp getResult() throws org.apache.thrift.TException {
         if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new java.lang.IllegalStateException("Method call not finished!");
         }
@@ -313,7 +313,6 @@ public class AdditionService {
       public tre_result getResult(I iface, tre_args args) throws org.apache.thrift.TException {
         tre_result result = new tre_result();
         result.success = iface.tre(args.s1);
-        result.setSuccessIsSet(true);
         return result;
       }
     }
@@ -460,7 +459,7 @@ public class AdditionService {
       }
     }
 
-    public static class tre<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, tre_args, java.lang.Double> {
+    public static class tre<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, tre_args, cn.com.howell.api.resp.Addresp> {
       public tre() {
         super("tre");
       }
@@ -469,13 +468,12 @@ public class AdditionService {
         return new tre_args();
       }
 
-      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+      public org.apache.thrift.async.AsyncMethodCallback<cn.com.howell.api.resp.Addresp> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
         final org.apache.thrift.AsyncProcessFunction fcall = this;
-        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Double>() { 
-          public void onComplete(java.lang.Double o) {
+        return new org.apache.thrift.async.AsyncMethodCallback<cn.com.howell.api.resp.Addresp>() { 
+          public void onComplete(cn.com.howell.api.resp.Addresp o) {
             tre_result result = new tre_result();
             result.success = o;
-            result.setSuccessIsSet(true);
             try {
               fcall.sendResponse(fb, result, org.apache.thrift.protocol.TMessageType.REPLY,seqid);
             } catch (org.apache.thrift.transport.TTransportException e) {
@@ -517,7 +515,7 @@ public class AdditionService {
         return false;
       }
 
-      public void start(I iface, tre_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler) throws org.apache.thrift.TException {
+      public void start(I iface, tre_args args, org.apache.thrift.async.AsyncMethodCallback<cn.com.howell.api.resp.Addresp> resultHandler) throws org.apache.thrift.TException {
         iface.tre(args.s1,resultHandler);
       }
     }
@@ -2432,12 +2430,12 @@ public class AdditionService {
   public static class tre_result implements org.apache.thrift.TBase<tre_result, tre_result._Fields>, java.io.Serializable, Cloneable, Comparable<tre_result>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("tre_result");
 
-    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.DOUBLE, (short)0);
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.STRUCT, (short)0);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new tre_resultStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new tre_resultTupleSchemeFactory();
 
-    public double success; // required
+    public cn.com.howell.api.resp.Addresp success; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -2498,13 +2496,11 @@ public class AdditionService {
     }
 
     // isset id assignments
-    private static final int __SUCCESS_ISSET_ID = 0;
-    private byte __isset_bitfield = 0;
     public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)));
+          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, cn.com.howell.api.resp.Addresp.class)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(tre_result.class, metaDataMap);
     }
@@ -2513,19 +2509,19 @@ public class AdditionService {
     }
 
     public tre_result(
-      double success)
+      cn.com.howell.api.resp.Addresp success)
     {
       this();
       this.success = success;
-      setSuccessIsSet(true);
     }
 
     /**
      * Performs a deep copy on <i>other</i>.
      */
     public tre_result(tre_result other) {
-      __isset_bitfield = other.__isset_bitfield;
-      this.success = other.success;
+      if (other.isSetSuccess()) {
+        this.success = new cn.com.howell.api.resp.Addresp(other.success);
+      }
     }
 
     public tre_result deepCopy() {
@@ -2534,31 +2530,31 @@ public class AdditionService {
 
     @Override
     public void clear() {
-      setSuccessIsSet(false);
-      this.success = 0.0;
+      this.success = null;
     }
 
-    public double getSuccess() {
+    public cn.com.howell.api.resp.Addresp getSuccess() {
       return this.success;
     }
 
-    public tre_result setSuccess(double success) {
+    public tre_result setSuccess(cn.com.howell.api.resp.Addresp success) {
       this.success = success;
-      setSuccessIsSet(true);
       return this;
     }
 
     public void unsetSuccess() {
-      __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __SUCCESS_ISSET_ID);
+      this.success = null;
     }
 
     /** Returns true if field success is set (has been assigned a value) and false otherwise */
     public boolean isSetSuccess() {
-      return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __SUCCESS_ISSET_ID);
+      return this.success != null;
     }
 
     public void setSuccessIsSet(boolean value) {
-      __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __SUCCESS_ISSET_ID, value);
+      if (!value) {
+        this.success = null;
+      }
     }
 
     public void setFieldValue(_Fields field, java.lang.Object value) {
@@ -2567,7 +2563,7 @@ public class AdditionService {
         if (value == null) {
           unsetSuccess();
         } else {
-          setSuccess((java.lang.Double)value);
+          setSuccess((cn.com.howell.api.resp.Addresp)value);
         }
         break;
 
@@ -2611,12 +2607,12 @@ public class AdditionService {
       if (this == that)
         return true;
 
-      boolean this_present_success = true;
-      boolean that_present_success = true;
+      boolean this_present_success = true && this.isSetSuccess();
+      boolean that_present_success = true && that.isSetSuccess();
       if (this_present_success || that_present_success) {
         if (!(this_present_success && that_present_success))
           return false;
-        if (this.success != that.success)
+        if (!this.success.equals(that.success))
           return false;
       }
 
@@ -2627,7 +2623,9 @@ public class AdditionService {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(success);
+      hashCode = hashCode * 8191 + ((isSetSuccess()) ? 131071 : 524287);
+      if (isSetSuccess())
+        hashCode = hashCode * 8191 + success.hashCode();
 
       return hashCode;
     }
@@ -2671,7 +2669,11 @@ public class AdditionService {
       boolean first = true;
 
       sb.append("success:");
-      sb.append(this.success);
+      if (this.success == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.success);
+      }
       first = false;
       sb.append(")");
       return sb.toString();
@@ -2680,6 +2682,9 @@ public class AdditionService {
     public void validate() throws org.apache.thrift.TException {
       // check for required fields
       // check for sub-struct validity
+      if (success != null) {
+        success.validate();
+      }
     }
 
     private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
@@ -2692,8 +2697,6 @@ public class AdditionService {
 
     private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
       try {
-        // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
-        __isset_bitfield = 0;
         read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
       } catch (org.apache.thrift.TException te) {
         throw new java.io.IOException(te);
@@ -2719,8 +2722,9 @@ public class AdditionService {
           }
           switch (schemeField.id) {
             case 0: // SUCCESS
-              if (schemeField.type == org.apache.thrift.protocol.TType.DOUBLE) {
-                struct.success = iprot.readDouble();
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRUCT) {
+                struct.success = new cn.com.howell.api.resp.Addresp();
+                struct.success.read(iprot);
                 struct.setSuccessIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -2741,9 +2745,9 @@ public class AdditionService {
         struct.validate();
 
         oprot.writeStructBegin(STRUCT_DESC);
-        if (struct.isSetSuccess()) {
+        if (struct.success != null) {
           oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
-          oprot.writeDouble(struct.success);
+          struct.success.write(oprot);
           oprot.writeFieldEnd();
         }
         oprot.writeFieldStop();
@@ -2769,7 +2773,7 @@ public class AdditionService {
         }
         oprot.writeBitSet(optionals, 1);
         if (struct.isSetSuccess()) {
-          oprot.writeDouble(struct.success);
+          struct.success.write(oprot);
         }
       }
 
@@ -2778,7 +2782,8 @@ public class AdditionService {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.success = iprot.readDouble();
+          struct.success = new cn.com.howell.api.resp.Addresp();
+          struct.success.read(iprot);
           struct.setSuccessIsSet(true);
         }
       }

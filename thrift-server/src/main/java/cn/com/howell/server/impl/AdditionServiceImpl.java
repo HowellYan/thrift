@@ -2,6 +2,7 @@ package cn.com.howell.server.impl;
 
 import cn.com.howell.api.AdditionService;
 import cn.com.howell.api.req.Addreq;
+import cn.com.howell.api.resp.Addresp;
 import org.apache.thrift.TException;
 
 /**
@@ -20,7 +21,9 @@ public class AdditionServiceImpl implements AdditionService.Iface {
     }
 
     @Override
-    public double tre(Addreq addreq) throws TException {
-        return addreq.getNum1()+addreq.getNum2();
+    public Addresp tre(Addreq addreq) throws TException {
+        Addresp addresp = new Addresp();
+        addresp.setNum1(addreq.getNum1()+addreq.getNum2());
+        return addresp;
     }
 }

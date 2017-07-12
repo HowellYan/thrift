@@ -28,7 +28,7 @@ public class Client {
             Addreq addreq = new Addreq();
             addreq.setNum1(15);
             addreq.setNum2(60);
-            System.out.println(client.tre(addreq));
+            System.out.println(client.tre(addreq).getNum1());
 
             transport.close();
         } catch (TTransportException e) {

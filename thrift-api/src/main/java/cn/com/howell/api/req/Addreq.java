@@ -13,17 +13,20 @@ public class Addreq implements org.apache.thrift.TBase<Addreq, Addreq._Fields>, 
 
   private static final org.apache.thrift.protocol.TField NUM1_FIELD_DESC = new org.apache.thrift.protocol.TField("num1", org.apache.thrift.protocol.TType.DOUBLE, (short)1);
   private static final org.apache.thrift.protocol.TField NUM2_FIELD_DESC = new org.apache.thrift.protocol.TField("num2", org.apache.thrift.protocol.TType.DOUBLE, (short)2);
+  private static final org.apache.thrift.protocol.TField NUM3_FIELD_DESC = new org.apache.thrift.protocol.TField("num3", org.apache.thrift.protocol.TType.DOUBLE, (short)3);
 
   private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new AddreqStandardSchemeFactory();
   private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new AddreqTupleSchemeFactory();
 
   public double num1; // required
   public double num2; // required
+  public double num3; // required
 
   /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
   public enum _Fields implements org.apache.thrift.TFieldIdEnum {
     NUM1((short)1, "num1"),
-    NUM2((short)2, "num2");
+    NUM2((short)2, "num2"),
+    NUM3((short)3, "num3");
 
     private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
 
@@ -42,6 +45,8 @@ public class Addreq implements org.apache.thrift.TBase<Addreq, Addreq._Fields>, 
           return NUM1;
         case 2: // NUM2
           return NUM2;
+        case 3: // NUM3
+          return NUM3;
         default:
           return null;
       }
@@ -84,6 +89,7 @@ public class Addreq implements org.apache.thrift.TBase<Addreq, Addreq._Fields>, 
   // isset id assignments
   private static final int __NUM1_ISSET_ID = 0;
   private static final int __NUM2_ISSET_ID = 1;
+  private static final int __NUM3_ISSET_ID = 2;
   private byte __isset_bitfield = 0;
   public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
   static {
@@ -91,6 +97,8 @@ public class Addreq implements org.apache.thrift.TBase<Addreq, Addreq._Fields>, 
     tmpMap.put(_Fields.NUM1, new org.apache.thrift.meta_data.FieldMetaData("num1", org.apache.thrift.TFieldRequirementType.REQUIRED, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)));
     tmpMap.put(_Fields.NUM2, new org.apache.thrift.meta_data.FieldMetaData("num2", org.apache.thrift.TFieldRequirementType.REQUIRED, 
+        new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)));
+    tmpMap.put(_Fields.NUM3, new org.apache.thrift.meta_data.FieldMetaData("num3", org.apache.thrift.TFieldRequirementType.REQUIRED, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)));
     metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
     org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(Addreq.class, metaDataMap);
@@ -101,13 +109,16 @@ public class Addreq implements org.apache.thrift.TBase<Addreq, Addreq._Fields>, 
 
   public Addreq(
     double num1,
-    double num2)
+    double num2,
+    double num3)
   {
     this();
     this.num1 = num1;
     setNum1IsSet(true);
     this.num2 = num2;
     setNum2IsSet(true);
+    this.num3 = num3;
+    setNum3IsSet(true);
   }
 
   /**
@@ -117,6 +128,7 @@ public class Addreq implements org.apache.thrift.TBase<Addreq, Addreq._Fields>, 
     __isset_bitfield = other.__isset_bitfield;
     this.num1 = other.num1;
     this.num2 = other.num2;
+    this.num3 = other.num3;
   }
 
   public Addreq deepCopy() {
@@ -129,6 +141,8 @@ public class Addreq implements org.apache.thrift.TBase<Addreq, Addreq._Fields>, 
     this.num1 = 0.0;
     setNum2IsSet(false);
     this.num2 = 0.0;
+    setNum3IsSet(false);
+    this.num3 = 0.0;
   }
 
   public double getNum1() {
@@ -177,6 +191,29 @@ public class Addreq implements org.apache.thrift.TBase<Addreq, Addreq._Fields>, 
     __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __NUM2_ISSET_ID, value);
   }
 
+  public double getNum3() {
+    return this.num3;
+  }
+
+  public Addreq setNum3(double num3) {
+    this.num3 = num3;
+    setNum3IsSet(true);
+    return this;
+  }
+
+  public void unsetNum3() {
+    __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __NUM3_ISSET_ID);
+  }
+
+  /** Returns true if field num3 is set (has been assigned a value) and false otherwise */
+  public boolean isSetNum3() {
+    return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __NUM3_ISSET_ID);
+  }
+
+  public void setNum3IsSet(boolean value) {
+    __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __NUM3_ISSET_ID, value);
+  }
+
   public void setFieldValue(_Fields field, java.lang.Object value) {
     switch (field) {
     case NUM1:
@@ -195,6 +232,14 @@ public class Addreq implements org.apache.thrift.TBase<Addreq, Addreq._Fields>, 
       }
       break;
 
+    case NUM3:
+      if (value == null) {
+        unsetNum3();
+      } else {
+        setNum3((java.lang.Double)value);
+      }
+      break;
+
     }
   }
 
@@ -205,6 +250,9 @@ public class Addreq implements org.apache.thrift.TBase<Addreq, Addreq._Fields>, 
 
     case NUM2:
       return getNum2();
+
+    case NUM3:
+      return getNum3();
 
     }
     throw new java.lang.IllegalStateException();
@@ -221,6 +269,8 @@ public class Addreq implements org.apache.thrift.TBase<Addreq, Addreq._Fields>, 
       return isSetNum1();
     case NUM2:
       return isSetNum2();
+    case NUM3:
+      return isSetNum3();
     }
     throw new java.lang.IllegalStateException();
   }
@@ -258,6 +308,15 @@ public class Addreq implements org.apache.thrift.TBase<Addreq, Addreq._Fields>, 
         return false;
     }
 
+    boolean this_present_num3 = true;
+    boolean that_present_num3 = true;
+    if (this_present_num3 || that_present_num3) {
+      if (!(this_present_num3 && that_present_num3))
+        return false;
+      if (this.num3 != that.num3)
+        return false;
+    }
+
     return true;
   }
 
@@ -268,6 +327,8 @@ public class Addreq implements org.apache.thrift.TBase<Addreq, Addreq._Fields>, 
     hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(num1);
 
     hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(num2);
+
+    hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(num3);
 
     return hashCode;
   }
@@ -300,6 +361,16 @@ public class Addreq implements org.apache.thrift.TBase<Addreq, Addreq._Fields>, 
         return lastComparison;
       }
     }
+    lastComparison = java.lang.Boolean.valueOf(isSetNum3()).compareTo(other.isSetNum3());
+    if (lastComparison != 0) {
+      return lastComparison;
+    }
+    if (isSetNum3()) {
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.num3, other.num3);
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+    }
     return 0;
   }
 
@@ -327,6 +398,10 @@ public class Addreq implements org.apache.thrift.TBase<Addreq, Addreq._Fields>, 
     sb.append("num2:");
     sb.append(this.num2);
     first = false;
+    if (!first) sb.append(", ");
+    sb.append("num3:");
+    sb.append(this.num3);
+    first = false;
     sb.append(")");
     return sb.toString();
   }
@@ -335,6 +410,7 @@ public class Addreq implements org.apache.thrift.TBase<Addreq, Addreq._Fields>, 
     // check for required fields
     // alas, we cannot check 'num1' because it's a primitive and you chose the non-beans generator.
     // alas, we cannot check 'num2' because it's a primitive and you chose the non-beans generator.
+    // alas, we cannot check 'num3' because it's a primitive and you chose the non-beans generator.
     // check for sub-struct validity
   }
 
@@ -390,6 +466,14 @@ public class Addreq implements org.apache.thrift.TBase<Addreq, Addreq._Fields>, 
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
             break;
+          case 3: // NUM3
+            if (schemeField.type == org.apache.thrift.protocol.TType.DOUBLE) {
+              struct.num3 = iprot.readDouble();
+              struct.setNum3IsSet(true);
+            } else { 
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+            }
+            break;
           default:
             org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
         }
@@ -404,6 +488,9 @@ public class Addreq implements org.apache.thrift.TBase<Addreq, Addreq._Fields>, 
       if (!struct.isSetNum2()) {
         throw new org.apache.thrift.protocol.TProtocolException("Required field 'num2' was not found in serialized data! Struct: " + toString());
       }
+      if (!struct.isSetNum3()) {
+        throw new org.apache.thrift.protocol.TProtocolException("Required field 'num3' was not found in serialized data! Struct: " + toString());
+      }
       struct.validate();
     }
 
@@ -416,6 +503,9 @@ public class Addreq implements org.apache.thrift.TBase<Addreq, Addreq._Fields>, 
       oprot.writeFieldEnd();
       oprot.writeFieldBegin(NUM2_FIELD_DESC);
       oprot.writeDouble(struct.num2);
+      oprot.writeFieldEnd();
+      oprot.writeFieldBegin(NUM3_FIELD_DESC);
+      oprot.writeDouble(struct.num3);
       oprot.writeFieldEnd();
       oprot.writeFieldStop();
       oprot.writeStructEnd();
@@ -436,6 +526,7 @@ public class Addreq implements org.apache.thrift.TBase<Addreq, Addreq._Fields>, 
       org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
       oprot.writeDouble(struct.num1);
       oprot.writeDouble(struct.num2);
+      oprot.writeDouble(struct.num3);
     }
 
     @Override
@@ -445,6 +536,8 @@ public class Addreq implements org.apache.thrift.TBase<Addreq, Addreq._Fields>, 
       struct.setNum1IsSet(true);
       struct.num2 = iprot.readDouble();
       struct.setNum2IsSet(true);
+      struct.num3 = iprot.readDouble();
+      struct.setNum3IsSet(true);
     }
   }
 
