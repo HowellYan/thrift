@@ -25,14 +25,27 @@
         <module>thrift-api</module>
         <module>thrift-client</module>
         <module>thrift-server</module>
+        <module>spring-boot-thrift</module>
     </modules>
 
+    <parent>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-parent</artifactId>
+        <version>Dalston.RELEASE</version>
+    </parent>
 
     <dependencies>
         <dependency>
             <groupId>org.apache.thrift</groupId>
             <artifactId>libthrift</artifactId>
             <version>0.10.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-consul-dependencies</artifactId>
+            <version>1.2.1.RELEASE</version>
+            <type>pom</type>
+            <scope>import</scope>
         </dependency>
     </dependencies>
 

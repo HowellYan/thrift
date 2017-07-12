@@ -30,11 +30,9 @@ public class Server {
             processor.registerProcessor("AdditionService", process);
             processor.registerProcessor("UserService", userProcessor);
 
-            Factory portFactory = new Factory(true, true);
             Args args = new Args(serverTransport);
             args.processor(processor);
-            args.protocolFactory(portFactory);
-
+            args.protocolFactory(new Factory(true, true));
             TServer server = new TThreadPoolServer(args);
             server.serve();
         } catch (TTransportException e) {
