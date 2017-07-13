@@ -22,4 +22,9 @@ public class ThriftApp {
     public String index() {
         return "Starting......";
     }
+
+    @RequestMapping("/health")
+    public String health() {
+        return "{\"description\":\"Spring Cloud Consul Discovery Client\",\"status\":\"UP\"}";
+    }
 }
