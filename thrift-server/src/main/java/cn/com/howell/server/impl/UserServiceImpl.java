@@ -23,4 +23,10 @@ public class UserServiceImpl implements UserService.Iface {
         }
         return userResp;
     }
+
+    @Override
+    public UserResp userLogout(UserReq userReq) throws TException {
+        return null;
+    }
+
 }
