@@ -25,6 +25,7 @@
         <module>thrift-api</module>
         <module>thrift-client</module>
         <module>thrift-server</module>
+        <module>spring-thrift-starter</module>
     </modules>
 
     <dependencies>
