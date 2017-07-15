@@ -21,6 +21,7 @@
                 <configuration>
                     <thriftExecutable>/usr/local/Cellar/thrift/0.10.0/bin/thrift</thriftExecutable>
                     <thriftExecutable>D:\install\thrift-0.10.0.exe</thriftExecutable>
+                    <thriftExecutable>/home/howell/install/thrift/bin/thrift</thriftExecutable>
                     <thriftSourceRoot>${basedir}/src/main/java/cn/com/howell/thrift</thriftSourceRoot>
                     <outputDirectory>${basedir}/src/main/java</outputDirectory>
                 </configuration>
