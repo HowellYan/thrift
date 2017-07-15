@@ -96,7 +96,11 @@ public class ThriftClientsMapBeanPostProcessor implements BeanPostProcessor {
     private Object getTargetBean(Object bean) {
         Object target = bean;
         while (AopUtils.isAopProxy(target)) {
-            target = ((Advised)target).getTargetSource().getTarget();
+            try {
+                target = ((Advised)target).getTargetSource().getTarget();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         return target;
     }
