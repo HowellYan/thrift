@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by bob on 17/1/11.
+ * Created by Howell on 17/1/11.
  */
 @RestController
 public class UserController {

@@ -9,7 +9,7 @@ import org.apache.thrift.TException;
 import org.spring.boot.thrift.server.annotation.ThriftServer;
 
 /**
- * Created by bob on 17/1/11.
+ * Created by Howell on 17/1/11.
  */
 @ThriftServer(value = "/userService")
 public class UserServerImpl implements UserService.Iface {
@@ -25,5 +25,10 @@ public class UserServerImpl implements UserService.Iface {
             userResp.setUserName("1234567777");
         }
         return userResp;
+    }
+
+    @Override
+    public UserResp userLogout(UserReq userReq) throws TException {
+        return null;
     }
 }
