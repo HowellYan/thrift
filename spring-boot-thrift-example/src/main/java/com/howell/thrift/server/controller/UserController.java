@@ -1,4 +1,4 @@
-package com.bb.thrift.server.controller;
+package com.howell.thrift.server.controller;
 
 import cn.com.howell.api.UserService;
 import cn.com.howell.api.req.UserReq;
