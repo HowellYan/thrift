@@ -3,6 +3,7 @@ package com.howell.thrift.server.controller;
 import cn.com.howell.api.UserService;
 import cn.com.howell.api.req.UserReq;
 import cn.com.howell.api.req.base.BaseReq;
+import org.mockito.cglib.beans.BeanMap;
 import org.spring.boot.thrift.client.annotation.ThriftClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -30,7 +31,7 @@ public class UserController {
         userReq.setUserMac("123456");
         userReq.setBaseReq(new BaseReq().setIp("123456").setKeep("123456"));
         UserServiceClient.userLogin(userReq);
-
+        o = BeanMap.create(UserServiceClient.userLogin(userReq).getBaseResp());
         return o;
     }
 
