@@ -17,7 +17,7 @@ import java.util.Map;
 @RestController
 public class UserController {
 
-    @ThriftClient(serviceId = "UserServerImpl", path = "/userService")
+    @ThriftClient(serviceId = "thriftserver", path = "/userService")
     UserService.Client UserServiceClient;
 
     @RequestMapping(method = RequestMethod.GET, value = "/userLogin")
